@@ -26,3 +26,9 @@ Wikipedia articles that may be of use:
 http://en.wikipedia.org/wiki/Cal_(Unix)
 http://en.wikipedia.org/wiki/Gregorian_calendar
 http://en.wikipedia.org/wiki/Zeller's_congruence
+
+Make file executable for rake command
+chmod +x Cal.rb
+
+Run single tests
+ruby test/test_months_integration.rb --name test_basic_month_that_starts_on_sunday
