@@ -69,35 +69,26 @@ EOS
   end
 
   def test_zellers_for_0_Saturday
-  	q = 1 #Jan 1 2000
-  	m = 13
-  	k = 99
-  	j = 19
+  	#Jan 1 2000
   	expected = 0
-  	test = Month.new(12, 2009)
-  	result = test.zellers(q, m, k, j)
+  	test = Month.new(01, 2000)
+  	result = test.zellers(01, 2000)
   	assert_equal expected, result
   end
 
   def test_zellers_for_4_Wednesday
-  	q = 1 #Mar 1 2000
-  	m = 3
-  	k = 0
-  	j = 20
+  	#Mar 1 2000
   	expected = 4
-  	test = Month.new(12, 2009)
-  	result = test.zellers(q, m, k, j)
+  	test = Month.new(03, 2000)
+  	result = test.zellers(03, 2000)
   	assert_equal expected, result
   end
 
   def test_zellers_for_6_Friday
-  	q = 7 #Feb 7 1812
-  	m = 14
-  	k = 11
-  	j = 18
-  	expected = 6
-  	test = Month.new(12, 2009)
-  	result = test.zellers(q, m, k, j)
+  	#Feb 7 1812
+  	expected = 0
+  	test = Month.new(02, 1812)
+  	result = test.zellers(02, 1812)
   	assert_equal expected, result
   end
 
