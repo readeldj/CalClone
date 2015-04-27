@@ -72,7 +72,7 @@ EOS
   	#Jan 1 2000
   	expected = 0
   	test = Month.new(01, 2000)
-  	result = test.zellers(01, 2000)
+  	result = test.zellers#(01, 2000)
   	assert_equal expected, result
   end
 
@@ -80,7 +80,7 @@ EOS
   	#Mar 1 2000
   	expected = 4
   	test = Month.new(03, 2000)
-  	result = test.zellers(03, 2000)
+  	result = test.zellers#(03, 2000)
   	assert_equal expected, result
   end
 
@@ -88,7 +88,7 @@ EOS
   	#Feb 7 1812
   	expected = 0
   	test = Month.new(02, 1812)
-  	result = test.zellers(02, 1812)
+  	result = test.zellers#(02, 1812)
   	assert_equal expected, result
   end
 
@@ -147,5 +147,61 @@ EOS
     result = test.month_size
   	assert_equal expected, result
   end
+
+#   def test_build_1st_week_at_Sunday
+#   	test = Month.new(01, 2017)
+#   	result = test.build_week
+#     expected = <<EOS
+#  1  2  3  4  5  6  7
+# EOS
+#     assert_equal expected, result
+#   end
+
+#   def test_build_1st_two_weeks_at_Sunday
+#   	test = Month.new(01, 2017)
+#   	result = test.build_week
+#     expected = <<EOS
+#  1  2  3  4  5  6  7
+#  8  9 10 11 12 13 14
+# EOS
+#     assert_equal expected, result
+#   end
+
+#   def test_build_1st_three_weeks_at_Sunday
+#   	test = Month.new(01, 2017)
+#   	result = test.build_week
+#     expected = <<EOS
+#  1  2  3  4  5  6  7
+#  8  9 10 11 12 13 14
+# 15 16 17 18 19 20 21
+# EOS
+#     assert_equal expected, result
+#   end
+
+#   def test_build_1st_four_weeks_at_Sunday
+#   	test = Month.new(01, 2017)
+#   	result = test.build_week
+#     expected = <<EOS
+#  1  2  3  4  5  6  7
+#  8  9 10 11 12 13 14
+# 15 16 17 18 19 20 21
+# 22 23 24 25 26 27 28
+# EOS
+#     assert_equal expected, result
+#   end
+
+  def test_build_31_day_month_starting_at_Sunday
+  	test = Month.new(01, 2017)
+  	result = test.build_week
+    expected = <<EOS
+ 1  2  3  4  5  6  7
+ 8  9 10 11 12 13 14
+15 16 17 18 19 20 21
+22 23 24 25 26 27 28
+29 30 31
+EOS
+    assert_equal expected, result
+  end
+
 end
 
