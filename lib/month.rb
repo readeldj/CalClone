@@ -49,73 +49,41 @@ class Month
 	end
 
 	def build_week
-
 		month_size()
 		zellers()
 		one_sp = " "
 		two_sp = "  "
 		week_one = String.new(str="")
-    countdown = (1..@month_size).to_a
-    countdown.each do |value|
-	    if @day == 1
-#first week
-	      if week_one.length == 0
-      		week_one << one_sp
-      	  week_one << value.to_s
-      	elsif week_one.length > 1 && week_one.length < 20
-      		week_one << two_sp
-      	  week_one << value.to_s
-      	elsif week_one.length == 20
-      		week_one << "\n"
-	      end
-#second week
-	      if week_one.length == 21
-	        week_one << one_sp
-	      	week_one << value.to_s
-      	elsif week_one.length > 21 && week_one.length < 41
-      		if value < 10
-	        	week_one << two_sp
-	      	  week_one << value.to_s
-	      	elsif value > 9
-	        	week_one << one_sp
-	      	  week_one << value.to_s
-	      	end
-      	elsif week_one.length == 41
-      		week_one << "\n"
-	      end
-#third week
-	      if week_one.length == 42
-	      	week_one << value.to_s
-	      elsif week_one.length > 42 && week_one.length < 62
-	      	week_one << one_sp
-	      	week_one << value.to_s
-	      elsif week_one.length == 62
-      		week_one << "\n"
-      	end
-#fourth week
-      	if week_one.length == 63
-	      	week_one << value.to_s
-	      elsif week_one.length > 63 && week_one.length < 83
-	      	week_one << one_sp
-	      	week_one << value.to_s
-	      elsif week_one.length == 83
-      		week_one << "\n"
-      	end
-#fith week
-      	if week_one.length == 84
-	      	week_one << value.to_s
-	      elsif week_one.length > 84 && week_one.length < 105
-	      	week_one << one_sp
-	      	week_one << value.to_s
-	      elsif week_one.length == 84
-      		week_one << "\n"
-      	end
+		a_month_array1 = [" 1", " 2", " 3", " 4", " 5", " 6", " 7", " 8", " 9"]
+		a_month_array2 = (10..@month_size).to_a
 
-	    end
-	  end
-	  week_one << "\n"
-    # puts week_one.length
-    @week_one = week_one
+		if @day == 2 #Mon
+			array0 = ["  "]
+			a_month_array1 = array0 + a_month_array1
+		elsif @day == 3 #Tue
+			array0 = ["  ", "  "]
+			a_month_array1 = array0 + a_month_array1
+		elsif @day == 4 #Wed
+			array0 = ["  ", "  ", "  "]
+			a_month_array1 = array0 + a_month_array1
+		elsif @day == 5 #Thur
+			array0 = ["  ","  ","  ","  "]
+			a_month_array1 = array0 + a_month_array1
+		elsif @day == 6 #Fri
+			array0 = ["  ", "  ", "  ", "  ", "  "]
+			a_month_array1 = array0 + a_month_array1
+	  elsif @day == 0 #Sat
+			array0 = ["  ", "  ", "  ", "  ", "  ", "  "]
+			a_month_array1 = array0 + a_month_array1
+		end
+
+		a_month_array1 = a_month_array1 + a_month_array2
+		a_month_array1 = a_month_array1.each_slice(7).to_a
+		a_month_array1.each do |value|
+			week_one << value.join(" ")
+			week_one << "\n"
+		end
+		@week_one = week_one
 	end
 
   def to_s
@@ -129,9 +97,3 @@ class Month
 EOS
   end
 end
-
-# 1  2  3  4  5  6  7
-#  8  9 10 11 12 13 14
-# 15 16 17 18 19 20 21
-# 22 23 24 25 26 27 28
-# 29 30 31
