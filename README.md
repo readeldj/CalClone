@@ -30,5 +30,9 @@ http://en.wikipedia.org/wiki/Zeller's_congruence
 Make file executable for rake command
 chmod +x cal.rb
 
+ruby test/test_month.rb
+
+ruby cal.rb 6 2012
+
 Run single tests
 ruby test/test_months_integration.rb --name test_basic_month_that_starts_on_sunday

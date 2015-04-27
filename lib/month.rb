@@ -1,11 +1,13 @@
+
+
 require_relative '../lib/month'
 
 class Month
   attr_reader :month, :year
 
   def initialize(month, year)
-    @month = month
-    @year = year
+    @month = month.to_i
+    @year = year.to_i
   end
 
   def name
