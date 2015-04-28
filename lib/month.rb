@@ -92,10 +92,11 @@ class Month
   	build_week()
   	week_header = "Su Mo Tu We Th Fr Sa"
   	m_header = "#{name} #{year}".center(20).rstrip
-    <<-EOS
-#{m_header}
-#{week_header}
-#{@week_one}
-EOS
+#     <<-EOS
+# #{m_header}
+# #{week_header}
+# #{@week_one}
+# EOS
+    month_result = m_header + "\n" + week_header + "\n" + @week_one + "\n"
   end
 end

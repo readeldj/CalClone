@@ -9,7 +9,7 @@ year_num = year.to_i
 @m = Month.new(month, year)
 # puts m.to_s
 
-if year_num > 1799 && year_num < 3001
+if month.to_i < 13 && month.to_i > 0 && year_num > 1799 && year_num < 3001
   puts @m.to_s
   # puts `cal #{month} #{year}`
 else
