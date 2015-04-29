@@ -10,8 +10,9 @@ year_num = year.to_i
 # puts m.to_s
 
 if month.to_i < 13 && month.to_i > 0 && year_num > 1799 && year_num < 3001
+  # !!!! going to have to fix this when we start printing the year !!!!
+
   puts @m.to_s
-  # puts `cal #{month} #{year}`
 else
 	puts "Date not in acceptable format/range"
 end

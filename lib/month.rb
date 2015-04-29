@@ -1,6 +1,6 @@
 
 
-require_relative '../lib/month'
+# require_relative '../lib/month'
 
 class Month
   attr_reader :month, :year
@@ -97,6 +97,7 @@ class Month
 # #{week_header}
 # #{@week_one}
 # EOS
-    month_result = m_header + "\n" + week_header + "\n" + @week_one + "\n"
+    @month_result = m_header + "\n" + week_header + "\n" + @week_one + "\n"
   end
+  @month_result
 end
