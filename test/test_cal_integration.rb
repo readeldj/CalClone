@@ -41,6 +41,7 @@ EOS
   end
 
   def test_century_leap_year
+    skip
     output = `./cal.rb 02 2009`
   	expected = <<EOS
    February 2009
